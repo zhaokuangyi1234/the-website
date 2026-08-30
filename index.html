@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        .a{
+            animation: floatUpFadeIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+            font-size: 25px;
+        }
         .sd{
             font-size: 34px;
             justify-content: center;
@@ -13,6 +17,7 @@
             background-color:black; 
             color: aliceblue;
             justify-items: center;
+            
         }
         .es{
             margin: auto;
@@ -27,26 +32,58 @@
             border-right-width: 30px;
             border-color: black;
             font-weight: bold;
-            
+            animation: floatUpFadeIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards 0.15s;
         }
         #fg{
             display: flex;
             background-color: #0f1511;
-            width: 289px;
+            width: 100px;
             height: 100px;
+            border-radius: 5px;
+            margin-left: 10px;
+            animation: floatUpFadeIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards 0.3s;
         }
+        /* 定义关键帧动画 */
+@keyframes floatUpFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); /* 初始位置在下方30px处 */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* 最终回到原位 */
+  }
+}
+
+/* 应用动画的类 */
+.fade-up-element {
+  /* 动画名称 持续时间 缓动函数 填充模式 */
+  animation: floatUpFadeIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  
+  /* 可选：确保元素在动画前不可见，防止闪烁 */
+  opacity: 0; 
+}
+.hj{
+    display: flex;
+    justify-content: center;
+}
     </style>
 </head>
 <body class="sd">
     <div class="es">
-        <p>＼（￣︶￣）／</p>
+        <p class="a">＼（￣︶￣）／</p>
     </div>
     <div>
         <p class="rd">
             欢迎来到我的个人网站，虽然这里暂时没什内容😘
         </p>
+    <div class="hj">
+            <div id="fg">
+
+        </div>
         <div id="fg">
 
+           </div>
         </div>
     </div>
 </body>
