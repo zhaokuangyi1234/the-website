@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .gh{
+            display: flex;
+            flex-direction: row;
+        }
+        .hj{
+            width: 150px;
+            height: 350px;
+            margin-left: 10px;
+            flex-direction: column;
+        }
+        .hj2{
+          display:none;
+            width: 150px;
+            height: 350px;
+           
+            margin-left: 10px;
+            flex-direction: column;
+        }
+        .kl{
+            width: 130px;
+            height: 35px;
+            background-color: #0f1511;
+            margin-left: 5px;
+            margin-top:8px;
+            border-radius: 6px;
+            animation: floatUpFadeIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+            opacity: 0;
+
+        }
+        /* 定义关键帧动画 */
+@keyframes floatUpFadeIn {
+  0% {
+    
+    opacity: 0;
+    transform: translateY(25px); /* 初始位置在下方30px处 */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* 最终回到原位 */
+  }
+}
+.er{
+  width: 130px;
+            height: 35px;
+            background-color: #0f1511;
+            margin-left: 5px;
+            margin-top:8px;
+            border-radius: 6px;animation: floatUpFadeIn2 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards 0.3s;
+            opacity: 0;
+
+}
+@keyframes floatUpFadeIn2 {
+  0% {
+    opacity: 0;
+    transform: translateX(25px); /* 初始位置在下方30px处 */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* 最终回到原位 */
+  }
+}
+.ty{
+  width: 100px;
+  height: 25px;
+  
+}
+
+
+
+
+    </style>
+</head>
+<body>
+  <button class="ty" id="btn1">
+动画1
+  </button>
+  <button class="ty" id="btn2">
+动画2
+  </button>
+    <div class="gh">
+      
+      
+        <div class="hj" id="box1"  style="display:none">
+            <div class="kl">
+
+            </div>
+            <div class="kl">
+
+            </div>
+            <div class="kl">
+
+            </div>
+            <div class="kl">
+
+            </div>
+            <div class="kl">
+
+            </div>
+            <div class="kl">
+
+            </div>
+            <div class="kl">
+
+            </div>
+
+        </div>
+        <div class="hj2" id="box2">
+          <div class="er">
+
+          </div>
+          <div class="er">
+
+          </div>
+          <div class="er">
+
+          </div>
+          <div class="er">
+
+          </div>
+          <div class="er">
+
+          </div>
+          <div class="er">
+
+          </div>
+          <div class="er">
+
+          </div>
+          
+        </div>
+    </div>
+    <script>
+     const kl = document.querySelectorAll('.kl');
+kl.forEach((kl, index) => {
+  // 每个元素延迟增加 0.15秒
+  kl.style.animationDelay = `${index * 0.15}s`;
+});
+const er = document.querySelectorAll('.er');
+er.forEach((er, index) => {
+  // 每个元素延迟增加 0.15秒
+  er.style.animationDelay = `${index * 0.15}s`;
+  
+});
+// 获取元素
+const btn1 = document.getElementById('btn1');
+const btn2 = document.getElementById('btn2');
+const box1 = document.getElementById('box1');
+const box2 = document.getElementById('box2');
+
+// 定义函数
+function showBox1() {
+  box1.style.display = 'flex'; // 关键：设置为 flex
+}
+
+function showBox2() {
+  box2.style.display = 'flex'; // 关键：设置为 flex
+}
+
+// 绑定事件
+btn1.addEventListener('click', showBox1);
+btn2.addEventListener('click', showBox2);
+
+
+    </script>
+</body>
+</html>
